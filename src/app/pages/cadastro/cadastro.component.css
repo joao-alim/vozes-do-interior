@@ -1,0 +1,145 @@
+/* Reutilizando as variáveis da sua paleta */
+:host {
+    --cor-solo-profundo: #2B2318;
+    --cor-raiz: #524835;
+    --cor-folha-escura: #56704B;
+    --cor-folha-media: #5D9E7E;
+    --cor-ceu-agua: #78B3A4;
+    --texto-claro: #F5F5F0;
+  }
+  
+  .cadastro-container {
+    min-height: 100vh; /* Permite rolar se a tela for pequena */
+    width: 100%;
+    background-color: var(--cor-solo-profundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px; /* Margem para celulares */
+    box-sizing: border-box;
+  }
+  
+  .cadastro-card {
+    background-color: var(--cor-raiz);
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 450px; /* Um pouco mais largo que o login */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--cor-folha-escura);
+    color: var(--texto-claro);
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--cor-ceu-agua);
+    text-align: center;
+    font-weight: 300;
+  }
+  
+  .header p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+  }
+  
+  .input-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--cor-ceu-agua);
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-folha-escura);
+    background-color: rgba(43, 35, 24, 0.5);
+    color: white;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s;
+  }
+  
+  .input-group input:focus {
+    border-color: var(--cor-ceu-agua);
+    box-shadow: 0 0 8px rgba(120, 179, 164, 0.3);
+  }
+  
+  /* --- ESTILO LGPD --- */
+  .lgpd-section {
+    margin: 1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: flex-start; /* Alinha o checkbox ao topo do texto */
+    cursor: pointer;
+    font-size: 0.9rem;
+    gap: 10px;
+  }
+  
+  .checkbox-container input {
+    accent-color: var(--cor-folha-media); /* Muda a cor padrão do browser para o verde */
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+  }
+  
+  .text-consent strong {
+    color: var(--cor-ceu-agua);
+  }
+  
+  .lgpd-disclaimer {
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-top: 8px;
+    font-style: italic;
+  }
+  
+  /* --- FIM ESTILO LGPD --- */
+  
+  .btn-cadastrar {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--cor-folha-escura);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+  }
+  
+  .btn-cadastrar:hover {
+    background-color: var(--cor-folha-media);
+  }
+  
+  .footer-cadastro {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .footer-cadastro a {
+    color: var(--cor-ceu-agua);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .footer-cadastro a:hover {
+    text-decoration: underline;
+  }

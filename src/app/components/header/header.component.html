@@ -1,1 +1,21 @@
-<p>header works!</p>
+<header class="navbar">
+    <div class="brand" routerLink="/home">
+      <span class="leaf-icon">🌿</span> Vozes do Interior
+    </div>
+  
+    <nav>
+      <ul class="nav-links">
+        <li><a routerLink="/home" routerLinkActive="active">Início</a></li>
+        <li><a routerLink="/artistas" routerLinkActive="active">Artistas</a></li>
+        <li><a routerLink="/galeria" routerLinkActive="active">Galeria</a></li>
+        <li><a routerLink="/sobre" routerLinkActive="active">Sobre</a></li>
+        <li><a routerLink="/contato" routerLinkActive="active">Contato</a></li>
+      </ul>
+    </nav>
+  
+    <div class="logout-section">
+      <button (click)="logout()" class="btn-logout" title="Sair">
+        Sair <span>🍂</span>
+      </button>
+    </div>
+  </header>
