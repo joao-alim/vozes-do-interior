@@ -1,0 +1,84 @@
+:host {
+    /* Variáveis locais para garantir a paleta */
+    --cor-fundo: #2B2318;
+    --cor-texto: #F5F5F0;
+    --cor-destaque: #78B3A4;
+    --cor-card: #524835;
+  }
+  
+  .hero-section {
+    width: 100%;
+  }
+  
+  .about-section {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--cor-destaque);
+    margin-bottom: 10px;
+  }
+  
+  .divider {
+    width: 60px;
+    height: 4px;
+    background-color: #56704B; /* Verde musgo */
+    margin: 0 auto 30px auto;
+    border-radius: 2px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #ddd;
+  }
+  
+  /* Cards explicativos */
+  .cards-intro {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap; /* Para celular */
+  }
+  
+  .card {
+    background-color: var(--cor-card);
+    padding: 20px;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Efeito de flutuar */
+  }
+  
+  .icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .card h3 {
+    color: var(--cor-destaque);
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
