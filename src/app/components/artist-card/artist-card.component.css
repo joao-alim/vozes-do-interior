@@ -1,81 +1,91 @@
 .card {
-    background-color: #524835; /* Marrom raiz */
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #56704B;
-    height: 100%; /* Para alinhar na grid */
-    display: flex;
-    flex-direction: column;
-  }
+  /* Fundo Areia Tostada (igual ao que fizemos na Galeria) */
+  background-color: #D2B48C;
   
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-  }
-  
-  .image-wrapper {
-    height: 200px;
-    background-color: #2B2318;
-    overflow: hidden;
-  }
-  
-  .image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-  }
-  
-  .card:hover .image-wrapper img {
-    transform: scale(1.1); /* Zoom suave na foto */
-  }
-  
-  .card-content {
-    padding: 1.5rem;
-    color: #F5F5F0;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-  
-  .category-badge {
-    background-color: #56704B;
-    color: #fff;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    align-self: flex-start;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  
-  h3 {
-    margin: 0 0 10px 0;
-    color: #78B3A4; /* Verde destaque */
-  }
-  
-  p {
-    font-size: 0.9rem;
-    color: #ccc;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    flex-grow: 1;
-  }
-  
-  .btn-ver-mais {
-    background-color: transparent;
-    border: 1px solid #78B3A4;
-    color: #78B3A4;
-    padding: 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
-  }
-  
-  .btn-ver-mais:hover {
-    background-color: #78B3A4;
-    color: #2B2318;
-    font-weight: bold;
-  }
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #B09474;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  border-color: #56704B; /* Borda Verde Musgo ao passar o mouse */
+}
+
+.image-wrapper {
+  height: 220px;
+  background-color: #C1A685;
+  overflow: hidden;
+  border-bottom: 1px solid #B09474;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.card:hover .image-wrapper img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1.5rem;
+  color: #3E3223; /* Texto escuro */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.category-badge {
+  background-color: #56704B; /* Verde Musgo */
+  color: #F5F5F0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  align-self: flex-start;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+h3 {
+  margin: 0 0 10px 0;
+  color: #2B4220; /* Verde bem escuro para o nome */
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 0.95rem;
+  color: #5A4A35;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.btn-ver-mais {
+  background-color: transparent;
+  border: 2px solid #56704B;
+  color: #56704B;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-ver-mais:hover {
+  background-color: #56704B;
+  color: #F5F5F0;
+}

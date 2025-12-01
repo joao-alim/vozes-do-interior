@@ -1,1 +1,13 @@
-<p>artwork-card works!</p>
+<div class="artwork-card">
+  <div class="image-container">
+    <img [src]="artwork.image" [alt]="artwork.title" class="artwork-image">
+  </div>
+  
+  <div class="artwork-info">
+    <h3 class="artwork-title">{{ artwork.title }}</h3>
+    
+    <p class="artwork-artist">Por {{ artwork.artist }}</p>
+    
+    <span class="artwork-type">{{ artwork.type }}</span>
+  </div>
+</div>

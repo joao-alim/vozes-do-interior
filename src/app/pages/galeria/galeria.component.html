@@ -1,1 +1,71 @@
-<p>galeria works!</p>
+<div class="page-container">
+  
+  <section class="page-header">
+    <div class="container">
+      <h1>Galeria de Arte</h1>
+      <p>Explore as obras criadas por artistas do interior da Bahia</p>
+    </div>
+  </section>
+
+  <section class="gallery-filters">
+    <div class="container">
+      <div class="filters">
+        <button class="filter-btn" 
+                [class.active]="currentFilter === 'all'" 
+                (click)="filterGallery('all')">
+          Todas
+        </button>
+
+        <button class="filter-btn" 
+                [class.active]="currentFilter === 'pintura'" 
+                (click)="filterGallery('pintura')">
+          Pinturas
+        </button>
+
+        <button class="filter-btn" 
+                [class.active]="currentFilter === 'fotografia'" 
+                (click)="filterGallery('fotografia')">
+          Fotografias
+        </button>
+
+        <button class="filter-btn" 
+                [class.active]="currentFilter === 'escultura'" 
+                (click)="filterGallery('escultura')">
+          Esculturas
+        </button>
+
+        <button class="filter-btn" 
+                [class.active]="currentFilter === 'musica'" 
+                (click)="filterGallery('musica')">
+          Músicas
+        </button>
+
+        <button class="filter-btn" 
+                [class.active]="currentFilter === 'video'" 
+                (click)="filterGallery('video')">
+          Vídeos
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="container">
+      
+      <div class="gallery-grid">
+        
+        @for (item of filteredArtworks; track item.id) {
+          <app-artwork-card [artwork]="item"></app-artwork-card>
+        }
+
+        @if (filteredArtworks.length === 0) {
+          <div class="no-items">
+            <p>Nenhuma obra encontrada nesta categoria no momento.</p>
+          </div>
+        }
+
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -1,45 +1,41 @@
-<div class="cadastro-container">
-    <div class="cadastro-card">
-      <div class="header">
-        <h1>Crie suas Raízes</h1>
-        <p>Junte-se ao Vozes do Interior</p>
-      </div>
-  
-      <form>
-        <div class="input-group">
-          <label for="nome">Nome Completo</label>
-          <input type="text" id="nome" placeholder="Como você quer ser chamado?" required>
-        </div>
-  
-        <div class="input-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="seu@email.com" required>
-        </div>
-  
-        <div class="input-group">
-          <label for="password">Senha</label>
-          <input type="password" id="password" placeholder="Crie uma senha forte" required>
-        </div>
-  
-        <div class="lgpd-section">
-          <label class="checkbox-container">
-            <input type="checkbox" required>
-            <span class="checkmark"></span>
-            <span class="text-consent">
-              Li e aceito a <strong>Política de Privacidade</strong> e autorizo o uso dos meus dados para acesso à plataforma.
-            </span>
-          </label>
-          <p class="lgpd-disclaimer">
-            * Seus dados serão protegidos e usados apenas para identificação no sistema, conforme a Lei 13.709/2018 (LGPD).
-          </p>
-        </div>
-  
-        <button type="submit" class="btn-cadastrar">Plantas Semente</button>
+<section class="auth-section">
+  <div class="auth-container">
+      <h1>Cadastre-se</h1>
+      <p>Junte-se à comunidade Vozes do Interior</p>
+      
+      <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+          <div class="form-group">
+              <label>Nome Completo</label>
+              <input type="text" name="name" [(ngModel)]="signupData.name" required>
+          </div>
+          
+          <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" [(ngModel)]="signupData.email" required>
+          </div>
+          
+          <div class="form-group">
+              <label>Senha</label>
+              <input type="password" name="password" [(ngModel)]="signupData.password" required>
+          </div>
+          
+          <div class="form-group">
+              <label>Confirmar Senha</label>
+              <input type="password" name="confirmPassword" [(ngModel)]="signupData.confirmPassword" required>
+          </div>
+
+          <div class="lgpd-container">
+             <label class="checkbox-label">
+                <input type="checkbox" required>
+                <span>Li e aceito a <strong>Política de Privacidade</strong>.</span>
+             </label>
+          </div>
+          
+          <button type="submit" class="btn-primary">Criar Conta</button>
       </form>
-  
-      <div class="footer-cadastro">
-        <p>Já faz parte do ecossistema?</p>
-        <a routerLink="/login">Voltar para o Login</a>
+      
+      <div class="auth-link">
+          Já tem uma conta? <a routerLink="/login">Faça login</a>
       </div>
-    </div>
   </div>
+</section>

@@ -1,84 +1,96 @@
 :host {
-    /* Variáveis locais para garantir a paleta */
-    --cor-fundo: #2B2318;
-    --cor-texto: #F5F5F0;
-    --cor-destaque: #78B3A4;
-    --cor-card: #524835;
-  }
-  
-  .hero-section {
-    width: 100%;
-  }
-  
-  .about-section {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-  
-  .content-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  h2 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: var(--cor-destaque);
-    margin-bottom: 10px;
-  }
-  
-  .divider {
-    width: 60px;
-    height: 4px;
-    background-color: #56704B; /* Verde musgo */
-    margin: 0 auto 30px auto;
-    border-radius: 2px;
-  }
-  
-  p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: #ddd;
-  }
-  
-  /* Cards explicativos */
-  .cards-intro {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
-    flex-wrap: wrap; /* Para celular */
-  }
-  
-  .card {
-    background-color: var(--cor-card);
-    padding: 20px;
-    border-radius: 12px;
-    flex: 1;
-    min-width: 200px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px); /* Efeito de flutuar */
-  }
-  
-  .icon {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .card h3 {
-    color: var(--cor-destaque);
-    margin-bottom: 10px;
-  }
-  
-  .card p {
-    font-size: 0.9rem;
-    color: #ccc;
-  }
+  /* Variáveis locais para facilitar */
+  --cor-destaque-verde: #56704B; /* O verde que você pediu */
+  --cor-fundo-claro: #EFE5D5;    /* Areia */
+  --cor-texto-escuro: #3E3223;   /* Café */
+  --cor-card-home: #D2B48C;      /* Areia Tostada (para os cards de destaque) */
+}
+
+/* Seção do Carrossel (Hero) */
+.hero-section {
+  width: 100%;
+  border-bottom: 4px solid var(--cor-destaque-verde); /* Linha verde separando */
+}
+
+/* Seção de Texto (Sobre) */
+.about-section {
+  background-color: var(--cor-fundo-claro);
+  color: var(--cor-texto-escuro);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Títulos em Verde Musgo */
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cor-destaque-verde);
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background-color: var(--cor-destaque-verde);
+  margin: 0 auto 30px auto;
+  border-radius: 2px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #6B5B45; /* Marrom suave para leitura */
+}
+
+strong {
+  color: var(--cor-destaque-verde);
+}
+
+/* Cards explicativos (Artes Visuais, Música, Cinema) */
+.cards-intro {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: var(--cor-card-home); /* Fundo mais escuro que a página */
+  padding: 25px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 250px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 1px solid #B09474;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--cor-destaque-verde);
+}
+
+.icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #2B4220; /* Verde bem escuro para o título do card */
+  margin-bottom: 10px;
+  font-family: 'Cinzel', serif;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #3E3223; /* Texto escuro para contraste no card */
+}

@@ -1,26 +1,36 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, Router } from '@angular/router'; // Adicionei 'Router' aqui
+import { FormsModule } from '@angular/forms'; // Essencial para o ngModel funcionar
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
 
-  // Aqui injetamos a ferramenta de navegação do Angular
+  // AQUI ESTAVA O PROBLEMA:
+  // Precisamos declarar o objeto 'loginData' para o HTML poder usar.
+  loginData = {
+    email: '',
+    password: '',
+    remember: false // O checkbox 'Lembrar-me' usa isso aqui
+  };
+
   constructor(private router: Router) {}
 
-  login() {
-    // Aqui seria onde você conectaria com um Back-end real.
-    // Como é um desafio Front-end, vamos simular o sucesso.
-    
-    console.log("Tentando entrar no Vozes do Interior...");
-    
-    // Redireciona para a página principal
-    this.router.navigate(['/home']);
+  onSubmit() {
+    console.log("Tentando logar com:", this.loginData);
+
+    // Validação simples para simular o login
+    if (this.loginData.email && this.loginData.password) {
+      // Se tiver e-mail e senha, deixa entrar
+      this.router.navigate(['/home']);
+    } else {
+      alert("Por favor, preencha e-mail e senha.");
+    }
   }
 }

@@ -1,0 +1,68 @@
+.artwork-card {
+  /* MUDANÇA: Tom de Marrom Claro / Areia Tostada */
+  background-color: #D2B48C; 
+  
+  border-radius: 12px;
+  overflow: hidden;
+  /* Borda um pouco mais escura para definir */
+  border: 1px solid #B09474; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra mais presente */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.artwork-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+  border-color: #78B3A4; /* Brilho verde água ao passar o mouse */
+}
+
+.artwork-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  /* Borda sutil separando imagem do texto */
+  border-bottom: 1px solid #B09474;
+}
+
+.artwork-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  /* Texto do card em marrom escuro para contraste com o fundo novo */
+  color: #3E3223; 
+}
+
+.artwork-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  /* Título em verde musgo escuro */
+  color: #2B4220; 
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.artwork-artist {
+  font-size: 0.9rem;
+  color: #5A4A35; /* Marrom médio para o nome */
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.artwork-type {
+  display: inline-block;
+  align-self: flex-start;
+  /* Etiqueta um pouco mais escura que o card */
+  background-color: #B09474; 
+  color: #F5F5F0; /* Texto claro na etiqueta */
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: auto;
+  font-weight: 600;
+}

@@ -1,0 +1,92 @@
+/* --- CONTAINER PRINCIPAL --- */
+.page-container {
+  /* MUDANÇA: Forçando o Fundo Areia (igual Home e Artistas) */
+  background-color: #EFE5D5; 
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- CABEÇALHO --- */
+.page-header {
+  text-align: center;
+  padding: 3rem 0 2rem;
+}
+
+.page-header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  /* Título em Verde Musgo */
+  color: #56704B; 
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.page-header p {
+  /* Subtítulo em Marrom Suave */
+  color: #6B5B45; 
+  font-size: 1.1rem;
+}
+
+/* --- FILTROS (BOTÕES) --- */
+.gallery-filters {
+  padding: 1rem 0 3rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filter-btn {
+  background: transparent;
+  /* Borda Verde Musgo */
+  border: 2px solid #56704B; 
+  color: #56704B;
+  padding: 8px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+  /* Fundo levemente verde ao passar o mouse */
+  background-color: rgba(86, 112, 75, 0.1); 
+}
+
+.filter-btn.active {
+  /* Botão ativo fica Verde Sólido com texto Branco */
+  background-color: #56704B;
+  color: #FFFFFF; 
+  box-shadow: 0 4px 10px rgba(86, 112, 75, 0.3);
+}
+
+/* --- GRADE DE OBRAS --- */
+.gallery-section {
+  padding-bottom: 4rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 2rem;
+}
+
+/* Mensagem de "Vazio" */
+.no-items {
+  text-align: center;
+  color: #6B5B45;
+  grid-column: 1 / -1;
+  padding: 3rem;
+  font-style: italic;
+}

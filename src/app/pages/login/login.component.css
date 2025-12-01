@@ -1,107 +1,100 @@
-:host {
-    --cor-solo-profundo: #2B2318;
-    --cor-raiz: #524835;
-    --cor-folha-escura: #56704B;
-    --cor-folha-media: #5D9E7E;
-    --cor-ceu-agua: #78B3A4;
-    --texto-claro: #F5F5F0;
-  }
-  
-  .login-container {
-    height: 100vh;
-    width: 100%;
-    background-color: var(--cor-solo-profundo); /* O fundo escuro (a base oculta) */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte limpa */
-  }
-  
-  .login-card {
-    background-color: var(--cor-raiz);
-    padding: 2.5rem;
-    border-radius: 16px; /* Bordas arredondadas (orgânico) */
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra suave para destacar do fundo */
-    border: 1px solid var(--cor-folha-escura); /* Uma borda sutil */
-    color: var(--texto-claro);
-  }
-  
-  .header h1 {
-    margin: 0;
-    font-size: 2rem;
-    color: var(--cor-ceu-agua); /* Destaque no título */
-    text-align: center;
-    font-weight: 300; /* Letra mais fina, elegante */
-  }
-  
-  .header p {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #ccc;
-    margin-bottom: 2rem;
-    font-style: italic;
-  }
-  
-  .input-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--cor-ceu-agua);
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid var(--cor-folha-escura);
-    background-color: rgba(43, 35, 24, 0.5); /* Solo profundo transparente */
-    color: white;
-    outline: none;
-    box-sizing: border-box; /* Garante que o padding não quebre o layout */
-    transition: 0.3s;
-  }
-  
-  .input-group input:focus {
-    border-color: var(--cor-ceu-agua); /* O "florescer" ao clicar */
-    box-shadow: 0 0 8px rgba(120, 179, 164, 0.3);
-  }
-  
-  .btn-entrar {
-    width: 100%;
-    padding: 14px;
-    background-color: var(--cor-folha-escura);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-  
-  .btn-entrar:hover {
-    background-color: var(--cor-folha-media); /* Fica mais vivo ao passar o mouse */
-  }
-  
-  .footer-login {
-    margin-top: 1.5rem;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  
-  .footer-login a {
-    color: var(--cor-ceu-agua);
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .footer-login a:hover {
-    text-decoration: underline;
-  }
+/* Fundo Areia da Tela Inteira */
+.auth-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFE5D5; /* Areia */
+}
+
+/* O Cartão Branco Centralizado */
+.auth-container {
+  background-color: #FFFFFF; /* Branco */
+  width: 100%;
+  max-width: 400px;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid #D6C6B0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos de Texto */
+h1 {
+  text-align: center;
+  color: #56704B; /* Verde Musgo */
+  font-family: 'Cinzel', serif;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  text-align: center;
+  color: #6B5B45;
+  margin-bottom: 2rem;
+}
+
+/* Inputs */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #3E3223;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #EFE5D5;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Essencial para não quebrar layout */
+}
+
+input:focus {
+  outline: none;
+  border-color: #56704B;
+}
+
+/* Links e Opções */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #6B5B45;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #6B5B45;
+}
+
+a {
+  color: #56704B;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Botão */
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: #56704B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #2B4220;
+}

@@ -1,0 +1,145 @@
+/* Container Geral (Fundo Areia) */
+.page-container {
+  background-color: #EFE5D5;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- CABEÇALHO --- */
+.page-header {
+  text-align: center;
+  padding: 4rem 0 3rem;
+}
+
+.page-header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: #56704B; /* Verde Musgo */
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.page-header p {
+  color: #6B5B45; /* Marrom Suave */
+  font-size: 1.2rem;
+}
+
+/* --- GRID DE CONTATO --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Info menor, Form maior */
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Lado Esquerdo: Texto */
+.contact-info h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  color: #56704B;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #56704B;
+  padding-left: 15px;
+}
+
+.contact-info p {
+  color: #3E3223;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.info-items .item {
+  margin-bottom: 1.5rem;
+}
+
+.info-items strong {
+  display: block;
+  color: #56704B;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-family: 'Cinzel', serif;
+}
+
+.info-items span {
+  color: #6B5B45;
+  font-size: 1rem;
+}
+
+/* Lado Direito: Formulário (Card Branco) */
+.form-card {
+  background-color: #FFFFFF;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid #D6C6B0;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #3E3223;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #EFE5D5; /* Borda Areia */
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  background-color: #FAFAFA;
+  box-sizing: border-box;
+  color: #3E3223;
+  transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #56704B; /* Foco Verde */
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(86, 112, 75, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical; /* Permite esticar apenas para baixo */
+}
+
+/* Botão Enviar */
+.btn-enviar {
+  width: 100%;
+  padding: 14px;
+  background-color: #56704B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.btn-enviar:hover {
+  background-color: #2B4220; /* Verde Escuro */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr; /* Uma coluna no celular */
+    gap: 2rem;
+  }
+}

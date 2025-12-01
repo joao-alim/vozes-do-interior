@@ -1,1 +1,69 @@
-<p>contato works!</p>
+<div class="page-container">
+  
+  <section class="page-header">
+    <div class="container">
+      <h1>Entre em Contato</h1>
+      <p>Estamos aqui para ouvir você. Dúvidas, parcerias ou sugestões.</p>
+    </div>
+  </section>
+
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
+        
+        <div class="contact-info">
+          <h2>Fale Conosco</h2>
+          <p>
+            Quer participar do projeto Vozes do Interior ou indicar um artista? 
+            Entre em contato através dos nossos canais oficiais ou preencha o formulário ao lado.
+          </p>
+          
+          <div class="info-items">
+            <div class="item">
+              <strong>Email:</strong>
+              <span>contato&#64;vozesdointerior.com.br</span>
+            </div>
+            
+            <div class="item">
+              <strong>Redes Sociais:</strong>
+              <span>&#64;vozesdointerior</span>
+            </div>
+
+            <div class="item">
+              <strong>Localização:</strong>
+              <span>Várzea do Poço - Bahia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            
+            <div class="form-group">
+              <label>Nome</label>
+              <input type="text" name="name" [(ngModel)]="contactData.name" required placeholder="Seu nome completo">
+            </div>
+            
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" [(ngModel)]="contactData.email" required placeholder="seu@email.com">
+            </div>
+            
+            <div class="form-group">
+              <label>Assunto</label>
+              <input type="text" name="subject" [(ngModel)]="contactData.subject" required placeholder="Sobre o que quer falar?">
+            </div>
+            
+            <div class="form-group">
+              <label>Mensagem</label>
+              <textarea name="message" rows="5" [(ngModel)]="contactData.message" required placeholder="Escreva sua mensagem aqui..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
