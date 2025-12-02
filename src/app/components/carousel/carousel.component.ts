@@ -15,17 +15,17 @@ export class CarouselComponent implements OnInit {
   slides = [
     {
       // Caminho relativo à pasta public
-      url: 'img/sertao.jpg', 
+      url: 'https://i.imgur.com/QO8WrCV.png', 
       title: 'A Alma do Sertão',
       desc: 'Onde a terra seca encontra a inspiração.'
     },
     {
-      url: 'img/musica.jpg',
+      url: 'https://i.imgur.com/1u0Yk3N.png',
       title: 'Sons da Terra',
       desc: 'Melodias que nascem da raiz.'
     },
     {
-      url: 'img/arte.jpg',
+      url: 'https://i.imgur.com/YRz8akx.png',
       title: 'Cores Vivas',
       desc: 'A arte visual que desafia o cinza.'
     }

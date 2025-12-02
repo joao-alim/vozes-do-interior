@@ -47,7 +47,7 @@
   color: #56704B; 
   font-family: 'Cinzel', serif;
   /* Sombra branca forte para ler em cima de qualquer foto */
-  text-shadow: 2px 2px 0px #EFE5D5, -1px -1px 0 #EFE5D5; 
+  text-shadow: 2px 2px 0px #000000, -1px -1px 0 #000000; 
 }
 
 .caption p {

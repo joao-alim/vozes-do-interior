@@ -13,7 +13,7 @@ export class ArtistsService {
       name: 'Dona Dalva',
       category: 'Samba de Roda',
       bio: 'Mestra do samba de roda do Recôncavo, preservando tradições ancestrais.',
-      imageUrl: 'img/dalva.jpg', // Coloque uma foto na pasta public/img
+      imageUrl: 'https://www.ba.gov.br/cultura/sites/site-secult/files/migracao_2024/arquivos/Image/DonaDalva_Divulgacao.jpg', // Coloque uma foto na pasta public/img
       instagram: '@donadalva'
     },
     {
@@ -21,14 +21,14 @@ export class ArtistsService {
       name: 'Bel Borba',
       category: 'Artes Visuais',
       bio: 'Artista plástico conhecido por suas intervenções urbanas e mosaicos.',
-      imageUrl: 'img/belborba.jpg'
+      imageUrl: 'https://alo-storage.nyc3.digitaloceanspaces.com/alo-laravel/public/images/p/nota_belborba_aloalobahia.jpg'
     },
     {
       id: 3,
-      name: 'Glauber Rocha',
+      name: 'Wagner Moura',
       category: 'Cinema',
-      bio: 'Cineasta conquistense, pai do Cinema Novo e visionário do sertão.',
-      imageUrl: 'img/glauber.jpg'
+      bio: 'Ator baiano reconhecido mundialmente pelas suas atuações.',
+      imageUrl: 'https://i.metroimg.com/_ZjkgLU75ti6tY0-wTJrvGN83dOR2lQtU-Uy24UDNPI/w:1200/q:85/f:webp/plain/2025/02/28114005/Wagner-Moura-4.jpg'
     },
     // Adicione mais artistas se quiser
   ];
