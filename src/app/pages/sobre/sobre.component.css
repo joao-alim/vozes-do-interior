@@ -1,14 +1,20 @@
-/* Container Geral com Fundo Areia */
+:host {
+  display: block;
+  width: 100%;
+}
+
 .page-container {
   background-color: #EFE5D5;
   min-height: 100vh;
   padding-bottom: 4rem;
+  overflow-x: hidden; /* Previne rolagem horizontal por causa da sombra da imagem */
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* --- CABEÇALHO --- */
@@ -20,21 +26,22 @@
 .page-header h1 {
   font-family: 'Cinzel', serif;
   font-size: 3rem;
-  color: #56704B; /* Verde Musgo */
+  color: #56704B; 
   margin-bottom: 0.5rem;
   font-weight: 700;
+  line-height: 1.1;
 }
 
 .page-header p {
-  color: #6B5B45; /* Marrom Suave */
+  color: #6B5B45; 
   font-size: 1.2rem;
 }
 
 /* --- GRID: TEXTO E IMAGEM --- */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
-  gap: 3rem;
+  grid-template-columns: 1fr 1fr; 
+  gap: 4rem;
   align-items: center;
   margin-bottom: 4rem;
 }
@@ -44,47 +51,49 @@
   font-size: 2rem;
   color: #56704B;
   margin-bottom: 1.5rem;
-  border-left: 4px solid #56704B; /* Detalhe lateral verde */
+  border-left: 4px solid #56704B; 
   padding-left: 15px;
 }
 
 .about-text p {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #3E3223; /* Marrom Café */
+  color: #3E3223; 
   margin-bottom: 1.5rem;
   text-align: justify;
 }
 
+.about-image {
+  position: relative;
+  /* Margem direita extra para compensar a sombra deslocada */
+  margin-right: 15px; 
+}
+
 .about-image img {
   width: 100%;
-  height: 400px;
+  height: auto; /* Altura automática para não deformar */
+  min-height: 300px;
   object-fit: cover;
   border-radius: 12px;
   border: 1px solid #D6C6B0;
-  box-shadow: 10px 10px 0px rgba(86, 112, 75, 0.2); /* Sombra "dura" verde para estilo artístico */
+  box-shadow: 10px 10px 0px rgba(86, 112, 75, 0.2); 
+  display: block;
 }
 
 /* --- CARDS DE MISSÃO/VISÃO --- */
 .mission-vision {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
 .mv-card {
-  background-color: #FFFFFF; /* Fundo Branco (Papel) */
+  background-color: #FFFFFF; 
   padding: 2.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   border: 1px solid #D6C6B0;
   text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.mv-card:hover {
-  transform: translateY(-5px);
-  border-color: #56704B;
 }
 
 .icon {
@@ -106,13 +115,31 @@
   line-height: 1.6;
 }
 
-/* Responsividade para celular */
+/* --- RESPONSIVIDADE MOBILE --- */
 @media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr; /* Vira uma coluna só */
+  .page-header {
+    padding: 2.5rem 0 1.5rem;
   }
   
-  .about-image img {
-    height: 300px;
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr; /* Uma coluna */
+    gap: 2rem;
+  }
+  
+  .about-image {
+    margin-right: 10px; /* Reduz margem da sombra */
+    margin-bottom: 1rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .mv-card {
+    padding: 1.5rem; /* Menos padding interno no card */
   }
 }

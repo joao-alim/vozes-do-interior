@@ -1,34 +1,30 @@
+/* --- ESTILO GERAL (DESKTOP) --- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* MUDANÇA: Fundo igual ao da página (Areia) */
-  background-color: #EFE5D5; 
+  background-color: #EFE5D5;
   padding: 0 2rem;
   height: 80px;
-  /* Borda sutil em verde para separar apenas um pouco */
-  border-bottom: 1px solid rgba(86, 112, 75, 0.2); 
+  border-bottom: 1px solid rgba(86, 112, 75, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;
-  /* Sombra bem leve */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.brand {
-  font-family: 'Cinzel', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  /* Logo em Verde Musgo */
-  color: #56704B; 
-  text-decoration: none;
+/* Correção da Imagem: Usar height fixo evita distorção */
+#nav-img {
+  height: 60px; /* Ajuste conforme necessário para caber na navbar de 80px */
+  width: auto;  /* Mantém a proporção correta */
+  display: block;
+}
+
+/* O container que segura Links e Logout juntos */
+.nav-content {
   display: flex;
   align-items: center;
-  gap: 8px;
-}
-
-.leaf-icon {
-  font-size: 1.2rem;
+  gap: 20px;
 }
 
 .nav-links {
@@ -41,19 +37,16 @@
 
 .nav-links a {
   text-decoration: none;
-  /* Texto dos links em Verde Musgo */
-  color: #56704B; 
+  color: #56704B;
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   padding: 8px 18px;
   border-radius: 20px;
   transition: all 0.3s ease;
-  border: 1px solid transparent; /* Para não pular quando borda aparecer */
+  border: 1px solid transparent;
 }
 
-/* Efeito Hover e Ativo */
 .nav-links a:hover, .nav-links a.active {
-  /* Fundo verde, Texto claro */
   background-color: #56704B;
   color: #EFE5D5;
   box-shadow: 0 4px 10px rgba(86, 112, 75, 0.2);
@@ -74,4 +67,71 @@
   background-color: #d9534f;
   border-color: #d9534f;
   color: white;
+}
+
+/* Esconde o botão hambúrguer no Desktop */
+.mobile-menu-btn {
+  display: none;
+}
+
+/* --- RESPONSIVIDADE (MOBILE / TABLET) --- */
+@media (max-width: 900px) {
+  
+  /* Mostra o botão hambúrguer */
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu-btn .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #56704B;
+    border-radius: 3px;
+  }
+
+  /* Transforma o menu horizontal em um menu vertical (Dropdown) */
+  .nav-content {
+    position: absolute;
+    top: 80px; /* Altura exata da navbar */
+    left: 0;
+    width: 100%;
+    background-color: #EFE5D5; /* Mesma cor do fundo */
+    flex-direction: column; /* Empilha verticalmente */
+    padding: 20px 0;
+    gap: 20px;
+    border-bottom: 2px solid #56704B;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    
+    /* ESCONDIDO POR PADRÃO */
+    display: none; 
+  }
+
+  /* CLASSE QUE O TYPESCRIPT ADICIONA PARA MOSTRAR O MENU */
+  .nav-content.active {
+    display: flex;
+  }
+
+  /* Ajustes nos links para o mobile */
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 80%; /* Botões largos no celular */
+    margin: 0 auto;
+  }
 }

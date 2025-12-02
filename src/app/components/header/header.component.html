@@ -1,21 +1,29 @@
 <header class="navbar">
-    <div class="brand" routerLink="/home">
-       Vozes do Interior
-    </div>
-  
+  <div class="brand">
+    <a routerLink="/home"><img src="Cabeçalho.png" alt="Logo" id="nav-img"></a>
+  </div>
+
+  <button class="mobile-menu-btn" (click)="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <div class="nav-content" [class.active]="isMenuOpen">
     <nav>
       <ul class="nav-links">
-        <li><a routerLink="/home" routerLinkActive="active">Início</a></li>
-        <li><a routerLink="/artistas" routerLinkActive="active">Artistas</a></li>
-        <li><a routerLink="/galeria" routerLinkActive="active">Galeria</a></li>
-        <li><a routerLink="/sobre" routerLinkActive="active">Sobre</a></li>
-        <li><a routerLink="/contato" routerLinkActive="active">Contato</a></li>
+        <li><a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Início</a></li>
+        <li><a routerLink="/artistas" routerLinkActive="active" (click)="closeMenu()">Artistas</a></li>
+        <li><a routerLink="/galeria" routerLinkActive="active" (click)="closeMenu()">Galeria</a></li>
+        <li><a routerLink="/sobre" routerLinkActive="active" (click)="closeMenu()">Sobre</a></li>
+        <li><a routerLink="/contato" routerLinkActive="active" (click)="closeMenu()">Contato</a></li>
       </ul>
     </nav>
-  
+
     <div class="logout-section">
       <button (click)="logout()" class="btn-logout" title="Sair">
         Sair
       </button>
     </div>
-  </header>
+  </div>
+</header>

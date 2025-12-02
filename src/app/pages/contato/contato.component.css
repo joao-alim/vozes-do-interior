@@ -1,14 +1,20 @@
-/* Container Geral (Fundo Areia) */
+:host {
+  display: block;
+  width: 100%;
+}
+
 .page-container {
   background-color: #EFE5D5;
   min-height: 100vh;
   padding-bottom: 4rem;
+  width: 100%;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* --- CABEÇALHO --- */
@@ -20,20 +26,21 @@
 .page-header h1 {
   font-family: 'Cinzel', serif;
   font-size: 3rem;
-  color: #56704B; /* Verde Musgo */
+  color: #56704B; 
   margin-bottom: 0.5rem;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .page-header p {
-  color: #6B5B45; /* Marrom Suave */
+  color: #6B5B45; 
   font-size: 1.2rem;
 }
 
 /* --- GRID DE CONTATO --- */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr; /* Info menor, Form maior */
+  grid-template-columns: 1fr 1.5fr; /* Desktop: Info menor, Form maior */
   gap: 4rem;
   align-items: start;
 }
@@ -66,22 +73,19 @@
   font-family: 'Cinzel', serif;
 }
 
-.info-items span {
-  color: #6B5B45;
-  font-size: 1rem;
-}
-
-/* Lado Direito: Formulário (Card Branco) */
+/* Lado Direito: Formulário */
 .form-card {
   background-color: #FFFFFF;
   padding: 2.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   border: 1px solid #D6C6B0;
+  box-sizing: border-box; /* Garante que padding não aumente a largura */
 }
 
 .form-group {
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .form-group label {
@@ -95,29 +99,22 @@
 .form-group textarea {
   width: 100%;
   padding: 12px;
-  border: 2px solid #EFE5D5; /* Borda Areia */
+  border: 2px solid #EFE5D5; 
   border-radius: 8px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   background-color: #FAFAFA;
-  box-sizing: border-box;
+  box-sizing: border-box; /* ESSENCIAL para não estourar a tela */
   color: #3E3223;
-  transition: all 0.3s;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #56704B; /* Foco Verde */
+  border-color: #56704B; 
   background-color: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(86, 112, 75, 0.1);
 }
 
-.form-group textarea {
-  resize: vertical; /* Permite esticar apenas para baixo */
-}
-
-/* Botão Enviar */
 .btn-enviar {
   width: 100%;
   padding: 14px;
@@ -129,17 +126,29 @@
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s;
-  letter-spacing: 0.5px;
 }
 
-.btn-enviar:hover {
-  background-color: #2B4220; /* Verde Escuro */
-}
-
-/* Responsividade */
+/* --- RESPONSIVIDADE MOBILE --- */
 @media (max-width: 768px) {
+  .page-header {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
   .contact-grid {
-    grid-template-columns: 1fr; /* Uma coluna no celular */
-    gap: 2rem;
+    grid-template-columns: 1fr; /* Coluna única no celular */
+    gap: 2.5rem;
+  }
+
+  /* Reduz padding do card para ganhar espaço pros inputs */
+  .form-card {
+    padding: 1.5rem; 
+  }
+
+  .contact-info h2 {
+    font-size: 1.5rem;
   }
 }

@@ -4,13 +4,14 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { ArtistasComponent } from './pages/artistas/artistas.component';
 import { GaleriaComponent } from './pages/galeria/galeria.component';
 import { ContatoComponent } from './pages/contato/contato.component';
-
+import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'header', component: HeaderComponent},
   { path: 'cadastro', component: CadastroComponent },
   { path: 'home', component: HomeComponent },
   { path: 'sobre', component: SobreComponent },

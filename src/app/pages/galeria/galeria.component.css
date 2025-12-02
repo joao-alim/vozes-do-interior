@@ -1,15 +1,22 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
 /* --- CONTAINER PRINCIPAL --- */
 .page-container {
-  /* MUDANÇA: Forçando o Fundo Areia (igual Home e Artistas) */
   background-color: #EFE5D5; 
   min-height: 100vh;
   padding-bottom: 4rem;
+  width: 100%;
+  overflow-x: hidden; /* SEGURANÇA: Impede que qualquer coisa crie rolagem lateral */
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1.5rem; /* Ajustei para usar rem */
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
 /* --- CABEÇALHO --- */
@@ -20,52 +27,54 @@
 
 .page-header h1 {
   font-family: 'Cinzel', serif;
-  font-size: 3rem;
-  /* Título em Verde Musgo */
+  font-size: 2.5rem; /* Reduzi levemente para caber melhor em tablets */
   color: #56704B; 
   margin-bottom: 0.5rem;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .page-header p {
-  /* Subtítulo em Marrom Suave */
   color: #6B5B45; 
   font-size: 1.1rem;
+  padding: 0 1rem; /* Margem de segurança para o texto não bater na borda */
 }
 
 /* --- FILTROS (BOTÕES) --- */
 .gallery-filters {
   padding: 1rem 0 3rem;
+  width: 100%;
 }
 
 .filters {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
+  flex-wrap: wrap; /* Permite que os botões caiam para a linha de baixo */
+  gap: 12px;
 }
 
 .filter-btn {
   background: transparent;
-  /* Borda Verde Musgo */
   border: 2px solid #56704B; 
   color: #56704B;
-  padding: 8px 24px;
+  padding: 8px 20px;
   border-radius: 30px;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   transition: all 0.3s ease;
   font-size: 0.9rem;
+  
+  /* Garante que o botão não fique gigante no mobile */
+  max-width: 100%; 
+  white-space: nowrap;
 }
 
 .filter-btn:hover {
-  /* Fundo levemente verde ao passar o mouse */
   background-color: rgba(86, 112, 75, 0.1); 
 }
 
 .filter-btn.active {
-  /* Botão ativo fica Verde Sólido com texto Branco */
   background-color: #56704B;
   color: #FFFFFF; 
   box-shadow: 0 4px 10px rgba(86, 112, 75, 0.3);
@@ -78,15 +87,49 @@
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  /* MUDANÇA CRUCIAL: Baixei de 300px para 240px. 
+     Isso garante que caiba em telas pequenas sem estourar. */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
   gap: 2rem;
 }
 
-/* Mensagem de "Vazio" */
+/* Garante que a imagem ou card dentro do grid respeite o limite */
+.gallery-grid > div, 
+.gallery-card { 
+  max-width: 100%;
+}
+
+/* Mensagem de Vazio */
 .no-items {
   text-align: center;
   color: #6B5B45;
   grid-column: 1 / -1;
   padding: 3rem;
   font-style: italic;
+}
+
+/* =======================================================
+   RESPONSIVIDADE (MOBILE)
+   ======================================================= */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .filters {
+    gap: 8px; /* Menos espaço entre botões */
+  }
+
+  .filter-btn {
+    padding: 6px 16px; /* Botões menores */
+    font-size: 0.85rem;
+    flex: 1 1 auto; /* Botões esticam para preencher a linha de forma bonita */
+    text-align: center;
+  }
+
+  .gallery-grid {
+    /* MUDANÇA: Força 1 coluna no celular, independente do tamanho da tela */
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+  }
 }
