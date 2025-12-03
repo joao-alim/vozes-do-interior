@@ -1,34 +1,33 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Importante para o *ngIf funcionar
-import { RouterOutlet, Router, NavigationEnd } from '@angular/router'; // Adicione NavigationEnd e Router
-import { HeaderComponent } from './components/header/header.component'; // Ajuste o caminho se precisar
+import { CommonModule } from '@angular/common'; 
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router'; 
+import { HeaderComponent } from './components/header/header.component'; 
+
+// IMPORTANTE: Importe o seu Footer aqui
+import { FooterComponent } from './components/footer/footer.component'; // <--- Verifique se o caminho está certo
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent], // Adicione CommonModule aqui
+  // Adicione o FooterComponent na lista de imports
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent], 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'vozes-do-interior';
-  
-  // Variável que controla se o menu aparece ou não
   mostrarMenu: boolean = true;
 
   constructor(private router: Router) {
-    // Esse código roda toda vez que você muda de página
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        // Verifica a URL atual
-        const urlAtual = event.urlAfterRedirects; // Pega a url final (ex: '/login')
+        const urlAtual = event.urlAfterRedirects;
         
-        // Se for login ou cadastro, ESCONDE o menu (false)
+        // Verifica se é login ou cadastro
         if (urlAtual.includes('/login') || urlAtual.includes('/cadastro')) {
-          this.mostrarMenu = false;
+          this.mostrarMenu = false; // Esconde tudo
         } else {
-          // Em qualquer outra página, MOSTRA o menu (true)
-          this.mostrarMenu = true;
+          this.mostrarMenu = true; // Mostra tudo
         }
       }
     });
