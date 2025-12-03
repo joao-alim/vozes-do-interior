@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+.card-perfil h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: none; 
+}
+
+.avatar-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.checkbox-highlight {
+  display: flex;
+  justify-content: center; 
+  text-align: center;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.toggle-text {
+  text-align: left;
+}
+
+.page-container {
+  background-color: #EFE5D5;
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem; 
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-family: 'Cinzel', serif;
+  color: #56704B;
+  font-size: clamp(1.8rem, 5vw, 2.5rem); 
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.page-header p {
+  font-size: 1rem;
+  color: #3E3223;
+  margin: 0;
+}
+
+.perfil-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.perfil-simple {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.perfil-simple .card-perfil {
+  width: 100%;
+  max-width: 600px; 
+}
+
+.card-perfil, .card-upload {
+  background: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #D6C6B0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  width: 100%;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.toggle-label input[type="checkbox"] {
+  min-width: 20px;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  accent-color: #56704B;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #EFE5D5;
+  border-radius: 8px;
+  background-color: #FAFAFA;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+input:focus {
+  border-color: #56704B;
+  outline: none;
+}
+
+.avatar-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #56704B;
+}
+
+.btn-primary, .btn-upload {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.btn-primary { background-color: #3E3223; color: white; }
+.btn-upload { background-color: #56704B; color: white; }
+
+
+@media (max-width: 768px) {
+  .perfil-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .page-container {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  .card-perfil, .card-upload {
+    padding: 1.25rem;
+  }
+
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+}

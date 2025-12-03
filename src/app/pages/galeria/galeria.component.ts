@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArtworkCardComponent } from '../../components/artwork-card/artwork-card.component';
 
-// O IMPORT IMPORTANTE:
-// Certifique-se de que está importando 'ContentService' (a classe) 
-// e 'Artwork' (a interface) do arquivo correto.
 import { ContentService, Artwork } from '../../services/content.service'; 
 
 @Component({
@@ -20,7 +17,6 @@ export class GaleriaComponent implements OnInit {
   filteredArtworks: Artwork[] = [];
   currentFilter: string = 'all';
 
-  // O erro estava aqui. Se o passo 1 estiver certo, isso aqui vai funcionar agora.
   constructor(private contentService: ContentService) {}
 
   ngOnInit(): void {

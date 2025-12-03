@@ -17,7 +17,6 @@
   box-sizing: border-box;
 }
 
-/* --- CABEÇALHO --- */
 .page-header {
   text-align: center;
   padding: 4rem 0 3rem;
@@ -37,7 +36,6 @@
   font-size: 1.2rem;
 }
 
-/* --- GRID DE CONTATO --- */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr; /* Desktop: Info menor, Form maior */
@@ -45,7 +43,6 @@
   align-items: start;
 }
 
-/* Lado Esquerdo: Texto */
 .contact-info h2 {
   font-family: 'Cinzel', serif;
   font-size: 2rem;
@@ -73,14 +70,13 @@
   font-family: 'Cinzel', serif;
 }
 
-/* Lado Direito: Formulário */
 .form-card {
   background-color: #FFFFFF;
   padding: 2.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   border: 1px solid #D6C6B0;
-  box-sizing: border-box; /* Garante que padding não aumente a largura */
+  box-sizing: border-box; 
 }
 
 .form-group {
@@ -104,7 +100,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   background-color: #FAFAFA;
-  box-sizing: border-box; /* ESSENCIAL para não estourar a tela */
+  box-sizing: border-box;
   color: #3E3223;
 }
 
@@ -128,7 +124,6 @@
   transition: background-color 0.3s;
 }
 
-/* --- RESPONSIVIDADE MOBILE --- */
 @media (max-width: 768px) {
   .page-header {
     padding: 2.5rem 0 2rem;
@@ -139,11 +134,10 @@
   }
 
   .contact-grid {
-    grid-template-columns: 1fr; /* Coluna única no celular */
+    grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  /* Reduz padding do card para ganhar espaço pros inputs */
   .form-card {
     padding: 1.5rem; 
   }

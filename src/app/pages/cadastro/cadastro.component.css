@@ -1,11 +1,10 @@
-/* Reutilizando estrutura para consistência */
 .auth-section {
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #EFE5D5; /* Fundo Areia */
+  background-color: #EFE5D5;
 }
 
 .auth-container {
@@ -48,7 +47,7 @@ input {
   padding: 10px;
   border: 2px solid #EFE5D5;
   border-radius: 8px;
-  box-sizing: border-box; /* Importante */
+  box-sizing: border-box; 
 }
 
 input:focus {

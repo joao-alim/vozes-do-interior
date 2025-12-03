@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Obrigatório para o formulário funcionar
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-contato',
@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms'; // Obrigatório para o formulário
 })
 export class ContatoComponent {
 
-  // Objeto que guarda os dados digitados
   contactData = {
     name: '',
     email: '',
@@ -22,8 +21,6 @@ export class ContatoComponent {
   onSubmit() {
     console.log("Formulário enviado:", this.contactData);
     alert("Mensagem enviada com sucesso! Logo entraremos em contato.");
-    
-    // Limpa o formulário depois de enviar
     this.contactData = {
       name: '',
       email: '',

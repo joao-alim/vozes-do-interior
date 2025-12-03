@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Artist } from '../../models/artist'; // Importe o modelo
+import { Artist } from '../../services/content.service'; // Importe a interface correta
 
 @Component({
   selector: 'app-artist-card',
@@ -10,5 +10,5 @@ import { Artist } from '../../models/artist'; // Importe o modelo
   styleUrl: './artist-card.component.css'
 })
 export class ArtistCardComponent {
-  @Input() artist!: Artist; // Recebe os dados do pai
+  @Input() artist!: Artist;
 }

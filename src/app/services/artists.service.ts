@@ -6,7 +6,6 @@ import { Artist } from '../models/artist';
 })
 export class ArtistsService {
 
-  // Nossa base de dados fictícia
   private artists: Artist[] = [
     {
       id: 1,
@@ -30,7 +29,6 @@ export class ArtistsService {
       bio: 'Ator baiano reconhecido mundialmente pelas suas atuações.',
       imageUrl: 'https://i.metroimg.com/_ZjkgLU75ti6tY0-wTJrvGN83dOR2lQtU-Uy24UDNPI/w:1200/q:85/f:webp/plain/2025/02/28114005/Wagner-Moura-4.jpg'
     },
-    // Adicione mais artistas se quiser
   ];
 
   constructor() { }

@@ -1,5 +1,4 @@
 .card {
-  /* Fundo Areia Tostada (igual ao que fizemos na Galeria) */
   background-color: #D2B48C;
   
   border-radius: 12px;
@@ -15,7 +14,7 @@
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-  border-color: #56704B; /* Borda Verde Musgo ao passar o mouse */
+  border-color: #56704B;
 }
 
 .image-wrapper {
@@ -38,14 +37,14 @@
 
 .card-content {
   padding: 1.5rem;
-  color: #3E3223; /* Texto escuro */
+  color: #3E3223;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 .category-badge {
-  background-color: #56704B; /* Verde Musgo */
+  background-color: #56704B;
   color: #F5F5F0;
   padding: 4px 12px;
   border-radius: 20px;
@@ -59,7 +58,7 @@
 
 h3 {
   margin: 0 0 10px 0;
-  color: #2B4220; /* Verde bem escuro para o nome */
+  color: #2B4220;
   font-family: 'Cinzel', serif;
   font-size: 1.4rem;
 }

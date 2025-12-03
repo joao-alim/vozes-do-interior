@@ -1,13 +1,18 @@
 <div class="card">
-    <div class="image-wrapper">
-      <img [src]="artist.imageUrl" [alt]="artist.name" onerror="this.style.display='none'">
-    </div>
-    
-    <div class="card-content">
-      <span class="category-badge">{{ artist.category }}</span>
-      <h3>{{ artist.name }}</h3>
-      <p>{{ artist.bio }}</p>
-      
-      <button class="btn-ver-mais">Ver Portfólio</button>
-    </div>
+  <div class="image-wrapper">
+    <img [src]="artist.image" [alt]="artist.name" 
+         onerror="this.src='assets/img/placeholder.jpg'">
   </div>
+  
+  <div class="card-content">
+    <span class="category-badge">{{ artist.specialty }}</span>
+    
+    <h3>{{ artist.name }}</h3>
+    
+    <p class="location-text" *ngIf="artist.location">{{ artist.location }}</p>
+    
+    <p>{{ artist.bio }}</p>
+    
+    <button class="btn-ver-mais">Ver Portfólio</button>
+  </div>
+</div>

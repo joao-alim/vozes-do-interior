@@ -1,58 +1,46 @@
-/* =======================================================
-   ESTRUTURA PRINCIPAL (A MÁGICA ACONTECE AQUI)
-   ======================================================= */
+
    :host {
     display: block;
-    /* Esta técnica força o componente a ocupar a largura total da janela (viewport),
-       mesmo se ele estiver dentro de uma div com padding/margem */
     width: 100vw;
     position: relative;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    overflow-x: hidden; /* Previne rolagem horizontal indesejada */
+    overflow-x: hidden;
   }
   
   .footer {
     background-color: #EFE5D5;
     color: #3E3223;
     
-    /* Padding interno para dar respiro vertical */
     padding: 3rem 0 2rem; 
     
     width: 100%;
     border-top: 3px solid #56704B;
-    box-sizing: border-box; /* Garante que padding não estoure a largura */
+    box-sizing: border-box;
   }
   
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Margem de segurança nas laterais do conteúdo */
+    padding: 0 20px;
     width: 100%;
     box-sizing: border-box;
   }
   
-  /* =======================================================
-     GRID E CONTEÚDO
-     ======================================================= */
   .footer-content {
     display: grid;
-    /* Cria colunas automáticas. No mobile vira 1, no tablet 2, no PC 4 */
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
     gap: 2.5rem;
     margin-bottom: 2rem;
-    text-align: left; /* Garante alinhamento consistente */
+    text-align: left;
   }
   
-  /* =======================================================
-     ESTILOS DE TEXTO E RESET DE MARGENS
-     ======================================================= */
   .footer-section h3 {
     color: #56704B;
-    font-family: 'Cinzel', serif; /* Certifique-se de importar essa fonte ou usar 'serif' */
-    margin-top: 0; /* Remove margem topo padrão */
+    font-family: 'Cinzel', serif;
+    margin-top: 0;
     margin-bottom: 1rem;
     font-size: 1.25rem;
     font-weight: 700;
@@ -65,7 +53,7 @@
     font-size: 0.95rem;
     color: #6B5B45;
     line-height: 1.6;
-    margin: 0; /* REMOVE A MARGEM PADRÃO DE 16PX DO NAVEGADOR */
+    margin: 0;
   }
   
   .footer-section ul {
@@ -100,16 +88,12 @@
     color: #6B5B45;
   }
   
-  /* =======================================================
-     RESPONSIVIDADE (MOBILE)
-     ======================================================= */
   @media (max-width: 768px) {
     .footer {
       padding: 2.5rem 0 1.5rem;
     }
     
     .footer-content {
-      /* No celular, usamos 1 coluna para não quebrar o layout */
       grid-template-columns: 1fr;
       text-align: center;
       gap: 2rem;
@@ -118,6 +102,6 @@
     .footer-section h3 {
       width: 100%;
       border-bottom: 1px solid rgba(86, 112, 75, 0.2);
-      display: block; /* Ocupa linha toda no mobile */
+      display: block;
     }
   }

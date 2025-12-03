@@ -1,0 +1,104 @@
+<div class="page-container">
+    <div class="container">
+      
+      <header class="page-header">
+        <h1>Área do Usuário</h1>
+        <p>Gerencie sua identidade no Vozes do Interior.</p>
+      </header>
+  
+      <div [class]="user.isArtist ? 'perfil-grid' : 'perfil-simple'">
+        
+        <div class="card-perfil">
+          <h2>Meu Perfil</h2>
+          
+          <div class="avatar-section">
+            <img [src]="user.image" alt="Foto de Perfil" class="avatar-img" 
+                 onerror="this.src='assets/img/placeholder.jpg'">
+          </div>
+  
+          <form (ngSubmit)="saveProfile()">
+            
+            <div class="form-group checkbox-highlight">
+              <label class="toggle-label">
+                <input type="checkbox" [(ngModel)]="user.isArtist" name="isArtist">
+                <span class="toggle-text">
+                  Sou um Artista Produtor
+                  
+                  <small *ngIf="user.isArtist">Seu perfil aparecerá na página de Artistas e você poderá enviar obras.</small>
+                  <small *ngIf="!user.isArtist">Modo Apreciador (Apenas visualização).</small>
+                </span>
+              </label>
+            </div>
+  
+            <div class="form-group">
+              <label>Link da Foto (URL)</label>
+              <input type="text" [(ngModel)]="user.image" name="image" placeholder="https://...">
+            </div>
+  
+            <div class="form-group">
+              <label>Nome de Exibição</label>
+              <input type="text" [(ngModel)]="user.name" name="name">
+            </div>
+            
+            <div class="form-group">
+              <label>Especialidade / Interesse</label>
+              <input type="text" [(ngModel)]="user.specialty" name="specialty">
+            </div>
+  
+            @if (user.isArtist) {
+              <div class="form-group">
+                <label>Localização</label>
+                <input type="text" [(ngModel)]="user.location" name="location">
+              </div>
+  
+              <div class="form-group">
+                <label>Biografia Curta</label>
+                <textarea [(ngModel)]="user.bio" name="bio" rows="3"></textarea>
+              </div>
+            }
+  
+            <button type="submit" class="btn-primary">Salvar Alterações</button>
+          </form>
+        </div>
+  
+        @if (user.isArtist) {
+          <div class="card-upload">
+            <h2>Publicar Nova Obra</h2>
+            <p class="upload-desc">Sua obra aparecerá instantaneamente na Galeria.</p>
+  
+            <form (ngSubmit)="uploadArtwork()">
+              <div class="form-group">
+                <label>Título da Obra</label>
+                <input type="text" [(ngModel)]="newArtwork.title" name="title" placeholder="Ex: Amanhecer no Sertão">
+              </div>
+  
+              <div class="form-group">
+                <label>Categoria</label>
+                <select [(ngModel)]="newArtwork.type" name="type">
+                  <option value="">Selecione...</option>
+                  <option value="pintura">Pintura</option>
+                  <option value="fotografia">Fotografia</option>
+                  <option value="escultura">Escultura</option>
+                  <option value="musica">Música</option>
+                  <option value="video">Vídeo</option>
+                </select>
+              </div>
+  
+              <div class="form-group">
+                <label>Link da Imagem (URL)</label>
+                <input type="text" [(ngModel)]="newArtwork.imageUrl" name="imageUrl" placeholder="Cole o link da imagem">
+              </div>
+  
+              <div class="form-group">
+                <label>Descrição</label>
+                <textarea [(ngModel)]="newArtwork.description" name="desc" rows="3"></textarea>
+              </div>
+  
+              <button type="submit" class="btn-upload">Publicar Obra</button>
+            </form>
+          </div>
+        }
+  
+      </div>
+    </div>
+  </div>

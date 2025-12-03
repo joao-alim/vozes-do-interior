@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Artwork } from '../../services/content.service'; // Importe a interface do seu serviço
+import { Artwork } from '../../services/content.service';
 
 @Component({
   selector: 'app-artwork-card',
@@ -10,6 +10,5 @@ import { Artwork } from '../../services/content.service'; // Importe a interface
   styleUrls: ['./artwork-card.component.css']
 })
 export class ArtworkCardComponent {
-  // O @Input() permite que a Galeria "entregue" os dados para este card
   @Input() artwork!: Artwork;
 }

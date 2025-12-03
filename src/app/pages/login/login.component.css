@@ -1,16 +1,14 @@
-/* Fundo Areia da Tela Inteira */
 .auth-section {
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #EFE5D5; /* Areia */
+  background-color: #EFE5D5;
 }
 
-/* O Cartão Branco Centralizado */
 .auth-container {
-  background-color: #FFFFFF; /* Branco */
+  background-color: #FFFFFF;
   width: 100%;
   max-width: 400px;
   padding: 2.5rem;
@@ -21,10 +19,9 @@
   flex-direction: column;
 }
 
-/* Estilos de Texto */
 h1 {
   text-align: center;
-  color: #56704B; /* Verde Musgo */
+  color: #56704B;
   font-family: 'Cinzel', serif;
   margin-bottom: 0.5rem;
 }
@@ -35,7 +32,6 @@ p {
   margin-bottom: 2rem;
 }
 
-/* Inputs */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -53,7 +49,7 @@ input {
   border: 2px solid #EFE5D5;
   border-radius: 8px;
   font-size: 1rem;
-  box-sizing: border-box; /* Essencial para não quebrar layout */
+  box-sizing: border-box;
 }
 
 input:focus {
@@ -61,7 +57,6 @@ input:focus {
   border-color: #56704B;
 }
 
-/* Links e Opções */
 .form-options {
   display: flex;
   justify-content: space-between;
@@ -82,7 +77,6 @@ a {
   text-decoration: none;
 }
 
-/* Botão */
 .btn-primary {
   width: 100%;
   padding: 12px;

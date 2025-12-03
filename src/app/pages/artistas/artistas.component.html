@@ -1,13 +1,19 @@
 <div class="page-container">
-    <header class="page-header">
+  <header class="page-header">
+    <div class="container">
       <h2>Nossos Artistas</h2>
       <p>Conheça quem faz a cultura do interior pulsar.</p>
-    </header>
-  
-    <div class="grid-container">
-      <app-artist-card 
-        *ngFor="let item of artistsList" 
-        [artist]="item">
-      </app-artist-card>
+    </div>
+  </header>
+
+  <div class="grid-container">
+    <app-artist-card 
+      *ngFor="let item of artistsList" 
+      [artist]="item">
+    </app-artist-card>
+
+    <div *ngIf="artistsList.length === 0" class="no-items">
+      <p>Nenhum artista encontrado no momento.</p>
     </div>
   </div>
+</div>

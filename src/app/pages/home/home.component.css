@@ -1,18 +1,15 @@
 :host {
-  /* Variáveis locais para facilitar */
-  --cor-destaque-verde: #56704B; /* O verde que você pediu */
-  --cor-fundo-claro: #EFE5D5;    /* Areia */
-  --cor-texto-escuro: #3E3223;   /* Café */
-  --cor-card-home: #D2B48C;      /* Areia Tostada (para os cards de destaque) */
+  --cor-destaque-verde: #56704B;
+  --cor-fundo-claro: #EFE5D5;
+  --cor-texto-escuro: #3E3223;
+  --cor-card-home: #D2B48C;
 }
 
-/* Seção do Carrossel (Hero) */
 .hero-section {
   width: 100%;
   border-bottom: 4px solid var(--cor-destaque-verde); /* Linha verde separando */
 }
 
-/* Seção de Texto (Sobre) */
 .about-section {
   background-color: var(--cor-fundo-claro);
   color: var(--cor-texto-escuro);
@@ -25,7 +22,6 @@
   margin: 0 auto;
 }
 
-/* Títulos em Verde Musgo */
 h2 {
   font-family: 'Cinzel', serif;
   font-size: 2.5rem;
@@ -46,14 +42,13 @@ p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 20px;
-  color: #6B5B45; /* Marrom suave para leitura */
+  color: #6B5B45; 
 }
 
 strong {
   color: var(--cor-destaque-verde);
 }
 
-/* Cards explicativos (Artes Visuais, Música, Cinema) */
 .cards-intro {
   display: flex;
   justify-content: center;
@@ -63,7 +58,7 @@ strong {
 }
 
 .card {
-  background-color: var(--cor-card-home); /* Fundo mais escuro que a página */
+  background-color: var(--cor-card-home);
   padding: 25px;
   border-radius: 12px;
   flex: 1;
@@ -85,12 +80,12 @@ strong {
 }
 
 .card h3 {
-  color: #2B4220; /* Verde bem escuro para o título do card */
+  color: #2B4220;
   margin-bottom: 10px;
   font-family: 'Cinzel', serif;
 }
 
 .card p {
   font-size: 0.95rem;
-  color: #3E3223; /* Texto escuro para contraste no card */
+  color: #3E3223;
 }

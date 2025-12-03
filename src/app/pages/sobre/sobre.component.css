@@ -7,7 +7,7 @@
   background-color: #EFE5D5;
   min-height: 100vh;
   padding-bottom: 4rem;
-  overflow-x: hidden; /* Previne rolagem horizontal por causa da sombra da imagem */
+  overflow-x: hidden; 
 }
 
 .container {
@@ -17,7 +17,6 @@
   box-sizing: border-box;
 }
 
-/* --- CABEÇALHO --- */
 .page-header {
   text-align: center;
   padding: 4rem 0 3rem;
@@ -37,7 +36,6 @@
   font-size: 1.2rem;
 }
 
-/* --- GRID: TEXTO E IMAGEM --- */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr; 
@@ -65,13 +63,12 @@
 
 .about-image {
   position: relative;
-  /* Margem direita extra para compensar a sombra deslocada */
   margin-right: 15px; 
 }
 
 .about-image img {
   width: 100%;
-  height: auto; /* Altura automática para não deformar */
+  height: auto;
   min-height: 300px;
   object-fit: cover;
   border-radius: 12px;
@@ -80,7 +77,6 @@
   display: block;
 }
 
-/* --- CARDS DE MISSÃO/VISÃO --- */
 .mission-vision {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -115,7 +111,6 @@
   line-height: 1.6;
 }
 
-/* --- RESPONSIVIDADE MOBILE --- */
 @media (max-width: 768px) {
   .page-header {
     padding: 2.5rem 0 1.5rem;
@@ -126,12 +121,12 @@
   }
 
   .about-grid {
-    grid-template-columns: 1fr; /* Uma coluna */
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
   
   .about-image {
-    margin-right: 10px; /* Reduz margem da sombra */
+    margin-right: 10px; 
     margin-bottom: 1rem;
   }
 
@@ -140,6 +135,6 @@
   }
   
   .mv-card {
-    padding: 1.5rem; /* Menos padding interno no card */
+    padding: 1.5rem;
   }
 }

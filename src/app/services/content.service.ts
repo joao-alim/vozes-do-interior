@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-// --- INTERFACES (Definem o formato dos dados) ---
 export interface Artist {
   id: number;
   name: string;
@@ -8,6 +7,8 @@ export interface Artist {
   bio: string;
   image: string;
   location: string;
+  email?: string;
+  isArtist?: boolean; // NOVO CAMPO: Define se é artista ou não
 }
 
 export interface Artwork {
@@ -15,25 +16,34 @@ export interface Artwork {
   title: string;
   artist: string;
   artistId: number;
-  type: string; // 'pintura', 'musica', 'video', 'fotografia', 'escultura'
+  type: string;
   image: string;
   description: string;
 }
 
-// --- O SERVIÇO (O cérebro que guarda os dados) ---
 @Injectable({
-  providedIn: 'root' // ISSO É OBRIGATÓRIO para funcionar a injeção
+  providedIn: 'root'
 })
 export class ContentService {
-  
-  // Lista de Artistas
+
+  private currentUser: Artist = {
+    id: 99,
+    name: "Visitante",
+    specialty: "Apreciador de Arte",
+    bio: "Explorando as raízes do interior.",
+    image: "https://i.pinimg.com/236x/23/40/8e/23408e565fc3f43454636fec27572d1f.jpg",
+    location: "Salvador, BA",
+    email: "visitante@vozes.com",
+    isArtist: false 
+  };
+
   private artists: Artist[] = [
     {
       id: 1,
       name: "Maria das Dores Silva",
       specialty: "Pintora",
       bio: "Retrata paisagens do sertão baiano com cores vibrantes.",
-      image: "..", 
+      image: "https://thumbs.dreamstime.com/b/pintura-e-criatividade-com-uma-pintora-ou-artista-mulher-trabalhando-em-tela-sua-oficina-est%C3%BAdio-art%C3%ADstica-arte-jovem-feminina-258327393.jpg",
       location: "Feira de Santana, BA",
     },
     {
@@ -41,7 +51,7 @@ export class ContentService {
       name: "João Pedro Santos",
       specialty: "Músico",
       bio: "Compositor e violeiro, preserva tradições musicais do interior.",
-      image: "assets/img/musico-violeiro.jpg",
+      image: "https://cursosdecanto.com.br/wp-content/uploads/2023/09/musicos-cantando-tocando-dia-do-musico-artigo-completo-4.jpg",
       location: "Jacobina, BA",
     },
     {
@@ -49,7 +59,7 @@ export class ContentService {
       name: "Ana Clara Oliveira",
       specialty: "Cineasta",
       bio: "Diretora de documentários sobre a vida no sertão.",
-      image: "assets/img/cineasta.jpg",
+      image: "https://media-manager.noticiasaominuto.com.br/960/naom_5c4b10127359a.webp",
       location: "Vitória da Conquista, BA",
     },
     {
@@ -57,7 +67,7 @@ export class ContentService {
       name: "Carlos Eduardo Lima",
       specialty: "Fotógrafo",
       bio: "Registra o cotidiano e as festas populares do recôncavo.",
-      image: "assets/img/fotografo.jpg",
+      image: "https://sebrae.com.br/Sebrae/Portal%20Sebrae/Ideias%20de%20Negocio/Importer/Images/520_background.webp",
       location: "Santo Amaro, BA",
     },
     {
@@ -65,12 +75,11 @@ export class ContentService {
       name: "Joana Rodrigues",
       specialty: "Escultora",
       bio: "Trabalha com barro e materiais da região.",
-      image: "assets/img/escultora.jpg",
+      image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSBGreDF8Ky9Jr7weM8AUE_avm6y3ykrtx0q6G7CBtT_i8wVc7SeVlltPKxMTn2XJtgaioULPqRpywwGEzenayPO19_y_R2yjKdP_YL1qgO8F3nyZHwRL8T8KKeDQy1tlebhyphenhyphenvsrVwe6Yh/s1600/L%25C3%25AAda+Gontijo+-+cer%25C3%25A2micas2.jpg",
       location: "Seabra, BA",
     }
   ];
 
-  // Lista de Obras (Galeria)
   private artworks: Artwork[] = [
     {
       id: 1,
@@ -130,14 +139,37 @@ export class ContentService {
 
   constructor() { }
 
-  // Métodos para pegar os dados
-  getArtists() { return this.artists; }
   
-  getArtworks() { return this.artworks; }
+  getArtists() {
+    if (this.currentUser.isArtist) {
+      return [this.currentUser, ...this.artists];
+    }
+    return this.artists;
+  }
 
-  // Método usado pelo filtro da Galeria
+  getArtworks() { return this.artworks; }
+  
   getArtworksByType(type: string) {
     if (type === 'all') return this.artworks;
     return this.artworks.filter(a => a.type === type);
+  }
+
+  getCurrentUser() { return this.currentUser; }
+
+  updateProfile(updatedData: Artist) {
+    this.currentUser = updatedData;
+  }
+
+  addArtwork(newArtwork: any) {
+    const artwork: Artwork = {
+      id: this.artworks.length + 1,
+      title: newArtwork.title,
+      type: newArtwork.type,
+      description: newArtwork.description,
+      image: newArtwork.image || 'assets/img/placeholder.jpg',
+      artist: this.currentUser.name,
+      artistId: this.currentUser.id
+    };
+    this.artworks.push(artwork);
   }
 }

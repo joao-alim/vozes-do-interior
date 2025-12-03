@@ -1,5 +1,4 @@
 .page-container {
-  /* Fundo Areia Global */
   background-color: #EFE5D5; 
   min-height: 100vh;
   padding: 2rem;
@@ -11,7 +10,6 @@
   padding-top: 2rem;
 }
 
-/* Título Principal em Verde Musgo */
 .page-header h2 {
   font-family: 'Cinzel', serif;
   font-size: 3rem;
@@ -20,11 +18,10 @@
 }
 
 .page-header p {
-  color: #6B5B45; /* Marrom suave */
+  color: #6B5B45;
   font-size: 1.2rem;
 }
 
-/* O Grid Responsivo */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
