@@ -8,16 +8,44 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
+// IMPORTANTE: Importe o guard que criamos
+import { authGuard } from './auth.guard'; 
+
 export const routes: Routes = [
+  // Rotas Públicas (Todo mundo pode acessar)
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'header', component: HeaderComponent},
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'sobre', component: SobreComponent },
-  { path: 'artistas', component: ArtistasComponent },
-  { path: 'galeria', component: GaleriaComponent },
-  { path: 'contato', component: ContatoComponent },
+  
+  // Rotas Protegidas (Só com login) -> Adicionei o canActivate aqui
+  { 
+    path: 'home', 
+    component: HomeComponent, 
+    canActivate: [authGuard]  // <--- O SEGURANÇA ESTÁ AQUI
+  },
+  { 
+    path: 'sobre', 
+    component: SobreComponent, 
+    canActivate: [authGuard] 
+  },
+  { 
+    path: 'artistas', 
+    component: ArtistasComponent, 
+    canActivate: [authGuard] 
+  },
+  { 
+    path: 'galeria', 
+    component: GaleriaComponent, 
+    canActivate: [authGuard] 
+  },
+  { 
+    path: 'contato', 
+    component: ContatoComponent, 
+    canActivate: [authGuard] 
+  },
+
+  // Header geralmente é um componente fixo, mas se for uma rota de teste:
+  { path: 'header', component: HeaderComponent }, 
 
   { path: '**', redirectTo: '' } 
 ];

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Necessário para funcionar o ngModel
+import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -12,8 +12,6 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class CadastroComponent {
 
-  // AQUI ESTAVA FALTANDO:
-  // Criamos o objeto que guarda os dados do formulário
   signupData = {
     name: '',
     email: '',
@@ -24,17 +22,40 @@ export class CadastroComponent {
   constructor(private router: Router) {}
 
   onSubmit() {
-    // 1. Validação simples: Senhas iguais?
+    // 1. Validação de senhas iguais
     if (this.signupData.password !== this.signupData.confirmPassword) {
       alert("As senhas não coincidem!");
       return;
     }
 
-    // 2. Simula o cadastro
-    console.log("Cadastrando usuário:", this.signupData);
-    alert("Cadastro realizado com sucesso! Bem-vindo(a) ao Vozes do Interior.");
+    // 2. Tenta recuperar usuários existentes (ou cria uma lista vazia se não houver ninguém)
+    const usersString = localStorage.getItem('vozes_users');
+    const users = usersString ? JSON.parse(usersString) : [];
 
-    // 3. Redireciona para o Login
+    // 3. Verifica se o e-mail já existe
+    const userExists = users.find((u: any) => u.email === this.signupData.email);
+
+    if (userExists) {
+      alert("Este e-mail já está cadastrado!");
+      return;
+    }
+
+    // 4. Adiciona o novo usuário na lista
+    // Não vamos salvar o confirmPassword, pois é inútil no banco
+    const newUser = {
+      name: this.signupData.name,
+      email: this.signupData.email,
+      password: this.signupData.password
+    };
+
+    users.push(newUser);
+
+    // 5. Salva a lista atualizada no LocalStorage
+    localStorage.setItem('vozes_users', JSON.stringify(users));
+
+    alert("Cadastro realizado com sucesso! Bem-vindo(a) ao Vozes do Interior.");
+    
+    // 6. Redireciona para o Login
     this.router.navigate(['/login']);
   }
 }
