@@ -1,9 +1,5 @@
-@if (showMenu) {
-  <app-header></app-header>
-}
+<app-header *ngIf="mostrarMenu"></app-header>
 
-<router-outlet></router-outlet>
-
-@if (showMenu) {
-  <app-footer></app-footer>
-}
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
