@@ -92,3 +92,14 @@ a {
   font-weight: bold;
   text-decoration: none;
 }
+
+.link-lgpd {
+  color: #56704B;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.link-lgpd:hover {
+  color: #2B4220;
+}

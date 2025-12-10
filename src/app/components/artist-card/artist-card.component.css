@@ -82,6 +82,10 @@ p {
   width: 100%;
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .btn-ver-mais:hover {

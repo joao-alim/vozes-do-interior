@@ -13,6 +13,8 @@
     
     <p>{{ artist.bio }}</p>
     
-    <button class="btn-ver-mais">Ver Portfólio</button>
+    <a [href]="artist.portfolioUrl || '#'" target="_blank" class="btn-ver-mais">
+  Ver Portfólio
+</a>
   </div>
 </div>

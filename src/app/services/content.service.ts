@@ -8,7 +8,8 @@ export interface Artist {
   image: string;
   location: string;
   email?: string;
-  isArtist?: boolean; // NOVO CAMPO: Define se é artista ou não
+  isArtist?: boolean;
+  portfolioUrl?: string;
 }
 
 export interface Artwork {
@@ -34,7 +35,8 @@ export class ContentService {
     image: "https://i.pinimg.com/236x/23/40/8e/23408e565fc3f43454636fec27572d1f.jpg",
     location: "Salvador, BA",
     email: "visitante@vozes.com",
-    isArtist: false 
+    isArtist: false,
+    portfolioUrl: ""
   };
 
   private artists: Artist[] = [
@@ -45,6 +47,7 @@ export class ContentService {
       bio: "Retrata paisagens do sertão baiano com cores vibrantes.",
       image: "https://thumbs.dreamstime.com/b/pintura-e-criatividade-com-uma-pintora-ou-artista-mulher-trabalhando-em-tela-sua-oficina-est%C3%BAdio-art%C3%ADstica-arte-jovem-feminina-258327393.jpg",
       location: "Feira de Santana, BA",
+      portfolioUrl: "https://instagram.com"
     },
     {
       id: 2,
@@ -53,6 +56,7 @@ export class ContentService {
       bio: "Compositor e violeiro, preserva tradições musicais do interior.",
       image: "https://cursosdecanto.com.br/wp-content/uploads/2023/09/musicos-cantando-tocando-dia-do-musico-artigo-completo-4.jpg",
       location: "Jacobina, BA",
+      portfolioUrl: "https://instagram.com"
     },
     {
       id: 3,
@@ -61,6 +65,7 @@ export class ContentService {
       bio: "Diretora de documentários sobre a vida no sertão.",
       image: "https://media-manager.noticiasaominuto.com.br/960/naom_5c4b10127359a.webp",
       location: "Vitória da Conquista, BA",
+      portfolioUrl: "https://instagram.com"
     },
     {
       id: 4,
@@ -69,6 +74,7 @@ export class ContentService {
       bio: "Registra o cotidiano e as festas populares do recôncavo.",
       image: "https://sebrae.com.br/Sebrae/Portal%20Sebrae/Ideias%20de%20Negocio/Importer/Images/520_background.webp",
       location: "Santo Amaro, BA",
+      portfolioUrl: "https://instagram.com"
     },
     {
       id: 5,
@@ -77,6 +83,7 @@ export class ContentService {
       bio: "Trabalha com barro e materiais da região.",
       image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSBGreDF8Ky9Jr7weM8AUE_avm6y3ykrtx0q6G7CBtT_i8wVc7SeVlltPKxMTn2XJtgaioULPqRpywwGEzenayPO19_y_R2yjKdP_YL1qgO8F3nyZHwRL8T8KKeDQy1tlebhyphenhyphenvsrVwe6Yh/s1600/L%25C3%25AAda+Gontijo+-+cer%25C3%25A2micas2.jpg",
       location: "Seabra, BA",
+      portfolioUrl: "https://instagram.com"
     }
   ];
 

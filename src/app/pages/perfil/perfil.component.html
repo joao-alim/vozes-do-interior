@@ -56,6 +56,18 @@
                 <textarea [(ngModel)]="user.bio" name="bio" rows="3"></textarea>
               </div>
             }
+
+            <div class="form-group">
+  <label>Biografia Curta</label>
+  <textarea [(ngModel)]="user.bio" name="bio" rows="3"></textarea>
+</div>
+
+<div class="form-group">
+  <label>Link do Portfólio (Instagram, Site, Behance)</label>
+  <input type="text" [(ngModel)]="user.portfolioUrl" name="portfolioUrl" 
+         placeholder="https://instagram.com/seu-perfil">
+  <small>Este link será aberto quando clicarem em "Ver Portfólio" no seu card.</small>
+</div>
   
             <button type="submit" class="btn-primary">Salvar Alterações</button>
           </form>
